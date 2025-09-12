@@ -75,6 +75,107 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WWCVMPW8');
           `}
         </Script>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Restaurant",
+              "name": "Stellar Binge",
+              "image": "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98GvNudk4vhovL8VSVyNi3x1sRQD",
+              "logo": "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98GvNudk4vhovL8VSVyNi3x1sRQD",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ground Floor, Stellar IT Park, C-25, Sector 62",
+                "addressLocality": "Noida",
+                "postalCode": "201309",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91 9599816865",
+              "servesCuisine": ["Indian", "Continental", "Multi-cuisine"],
+              "url": "https://www.stellarbinge.com/",
+              "priceRange": "₹₹",
+              "openingHoursSpecification": [{
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "11:00",
+                "closes": "23:00"
+              }],
+              "sameAs": [
+                "https://www.facebook.com/bingenoida",
+                "https://www.instagram.com/stellar_binge",
+                "https://www.youtube.com/@Stellar_Binge",
+                "https://www.linkedin.com/in/stellar-binge-78691321a/"
+              ]
+            }
+          `}
+        </Script>
+        {/* FAQ Structured Data */}
+        <Script
+          id="faq-structured-data"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What are the opening hours of Stellar Binge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Stellar Binge is open daily from 11:00 AM to 11:00 PM."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you accept reservations?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can reserve a table by calling +91 9599816865 or using the reservation form on our website."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What cuisines are served at Stellar Binge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We serve a variety of cuisines including Indian, Continental, and Multi-cuisine dishes."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you offer delivery or takeaway services?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Stellar Binge offers both delivery and takeaway options. You can order directly through our website or contact us via phone."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is parking available at Stellar Binge?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, ample parking is available at our location in Stellar IT Park, Sector 62, Noida."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you host events or private parties?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, Stellar Binge can host events, private parties, and corporate gatherings with customized arrangements and catering."
+                  }
+                }
+              ]
+            }
+          `}
+        </Script>
       </head>
 
       <body
