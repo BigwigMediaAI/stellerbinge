@@ -167,6 +167,7 @@ export default function MenuPage() {
   return (
     <div className="bg-white">
       <Navbar />
+      <link rel="canonical" href="https://www.stellarbinge.com/menu" />
 
       {/* HERO SECTION */}
       <section className="relative w-full h-[70vh] md:h-[100vh] flex items-center justify-center pt-32">

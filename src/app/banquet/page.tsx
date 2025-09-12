@@ -50,6 +50,8 @@ export default function BanquetPage() {
   return (
     <div>
       <Navbar />
+      <link rel="canonical" href="https://www.stellarbinge.com/banquet" />
+
       <main className="bg-white text-black font-raleway mt-28">
         {/* Hero Section */}
         <section className="relative w-full h-[60vh] md:h-[90vh] flex items-center justify-center">

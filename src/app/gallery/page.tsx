@@ -82,6 +82,8 @@ export default function OurCreationsPage() {
 
   return (
     <div>
+      <link rel="canonical" href="https://www.stellarbinge.com/gallery" />
+
       <Navbar />
 
       {/* HERO SECTION */}

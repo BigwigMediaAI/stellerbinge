@@ -32,7 +32,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="dxj-iVuktppnnUldgn-dECo6FjjBkVmAMqzMsoF6Yx8"
         />
-
+        <link rel="canonical" href="https://www.stellarbinge.com/" />
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"

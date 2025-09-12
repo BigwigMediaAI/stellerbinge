@@ -47,6 +47,7 @@ export default function OurJourney() {
   return (
     <div>
       <Navbar />
+      <link rel="canonical" href="https://www.stellarbinge.com/our-journey" />
       <section className="relative w-full h-[100vh] flex items-center justify-center pt-32">
         {/* Background Image */}
         <Image

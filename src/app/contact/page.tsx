@@ -68,6 +68,8 @@ export default function ContactPage() {
   return (
     <div className=" text-black  transition-colors">
       {/* Toast container */}
+      <link rel="canonical" href="https://www.stellarbinge.com/contact" />
+
       <Toaster position="top-center" reverseOrder={false} />
 
       <Navbar />
