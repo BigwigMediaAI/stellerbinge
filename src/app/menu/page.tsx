@@ -40,6 +40,18 @@ import menuPage30 from "../../../assets/menu/tandoor veg.webp";
 import menuPage31 from "../../../assets/menu/tandoor-veg.webp";
 import menuPage32 from "../../../assets/menu/yougets & deserts.webp";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Our Menu | Stellar Binge",
+    description:
+      "Explore the diverse menu at Stellar Binge – from soups and salads to indulgent drinks and decadent desserts.",
+    alternates: {
+      canonical: "https://www.stellarbinge.com/menu",
+    },
+  };
+}
 
 export default function MenuPage() {
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -167,7 +179,6 @@ export default function MenuPage() {
   return (
     <div className="bg-white">
       <Navbar />
-      <link rel="canonical" href="https://www.stellarbinge.com/menu" />
 
       {/* HERO SECTION */}
       <section className="relative w-full h-[70vh] md:h-[100vh] flex items-center justify-center pt-32">
