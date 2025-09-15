@@ -167,6 +167,12 @@ export default function MenuPage() {
 
   return (
     <div className="bg-white">
+      <title>Stellar Binge Menu | Multi-Cuisine Dining in Noida</title>
+      <meta
+        name="description"
+        content="Explore the Stellar Binge menu featuring Indian, Continental, and Oriental delights. 
+A perfect mix of flavors crafted for food lovers in Greater Noida."
+      />
       <link rel="canonical" href="https://www.stellarbinge.com/menu" />
 
       <Navbar />

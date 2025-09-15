@@ -70,9 +70,15 @@ function Blogs() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <title>Stellar Binge Blogs | Dining, Events & Lifestyle Insights</title>
+      <meta
+        name="description"
+        content="Read Stellar Binge blogs on food, dining trends, luxury banquets, and lifestyle in 
+Greater Noida. Stay updated with fresh ideas and experiences."
+      />
+      <link rel="canonical" href="https://www.stellarbinge.com/blogs" />
       {/* Navbar */}
       <Navbar />
-      <link rel="canonical" href="https://www.stellarbinge.com/blogs" />
 
       {/* Blogs container */}
       <main className="flex-1 w-11/12 md:w-5/6 mx-auto py-36 ">

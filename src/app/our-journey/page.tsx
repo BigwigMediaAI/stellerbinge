@@ -46,8 +46,14 @@ export default function OurJourney() {
   };
   return (
     <div>
-      <Navbar />
+      <title>Our Journey | Story of Stellar Binge in Noida</title>
+      <meta
+        name="description"
+        content="Discover the journey of Stellar Binge – from vision to becoming a leading restaurant 
+and banquet in Greater Noida, built on taste and trust."
+      />
       <link rel="canonical" href="https://www.stellarbinge.com/our-journey" />
+      <Navbar />
       <section className="relative w-full h-[100vh] flex items-center justify-center pt-32">
         {/* Background Image */}
         <Image

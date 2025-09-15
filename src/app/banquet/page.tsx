@@ -49,8 +49,14 @@ export default function BanquetPage() {
 
   return (
     <div>
-      <Navbar />
+      <title>Banquet Hall in Noida | Stellar Binge Events Venue</title>
+      <meta
+        name="description"
+        content="Host weddings, parties, and corporate events at Stellar Binge banquet hall in 
+Greater Noida. Spacious, elegant, and perfect for every celebration."
+      />
       <link rel="canonical" href="https://www.stellarbinge.com/banquet" />
+      <Navbar />
 
       <main className="bg-white text-black font-raleway mt-28">
         {/* Hero Section */}
