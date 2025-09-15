@@ -167,15 +167,10 @@ export default function MenuPage() {
 
   return (
     <div className="bg-white">
+      <link rel="canonical" href="https://www.stellarbinge.com/menu" />
+
       <Navbar />
-      <Head>
-        <title>Our Menu | Stellar Binge</title>
-        <meta
-          name="description"
-          content="Explore the diverse menu at Stellar Binge – from soups and salads to indulgent drinks and decadent desserts."
-        />
-        <link rel="canonical" href="https://www.stellarbinge.com/menu" />
-      </Head>
+
       {/* HERO SECTION */}
       <section className="relative w-full h-[70vh] md:h-[100vh] flex items-center justify-center pt-32">
         <Image src={banner} alt="Menu" fill priority className="object-cover" />
