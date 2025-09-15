@@ -1,4 +1,6 @@
-User-agent: * 
+User-agent: *
 Disallow: /dashboard
+Disallow: /_next/
+Disallow: /*.shtml$
 
 Sitemap: https://www.stellarbinge.com/sitemap.xml
