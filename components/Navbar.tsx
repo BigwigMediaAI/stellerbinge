@@ -259,7 +259,7 @@ const Navbar = () => {
       </div>
 
       {mobileMenu && (
-        <div className="md:hidden fixed top-32 left-0 w-full h-[calc(100vh-3rem)] overflow-y-auto px-4 pt-4 pb-4 z-40 bg-white dark:bg-black">
+        <div className="md:hidden fixed top-32 left-0 w-full h-[calc(100vh-3rem)] overflow-y-auto px-4 pt-4 pb-4 z-40 bg-white dark:bg-white">
           <div className="space-y-6">
             {navItems.map((item, idx) => (
               <div key={idx}>
