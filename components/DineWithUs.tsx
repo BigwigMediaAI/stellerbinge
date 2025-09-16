@@ -60,7 +60,7 @@ const DiningExperienceSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white text-black font-raleway font-light dark:font-thin relative overflow-hidden"
+      className="bg-white text-black font-raleway font-light dark:font-light relative overflow-hidden"
     >
       <div className="w-11/12 md:w-5/6 mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-16">
         {/* Text Content */}
@@ -80,7 +80,7 @@ const DiningExperienceSection: React.FC = () => {
             Your destination for flavors, finesse, and unforgettable moments.
           </h2>
           <p
-            className="text-gray-700 dark:text-gray-300 text-base mb-8 mt-4 text-justify"
+            className="text-gray-700 dark:text-black text-base mb-8 mt-4 text-justify"
             data-aos="fade-right"
           >
             At Stellar Binge, every dish is a masterpiece, crafted with passion,

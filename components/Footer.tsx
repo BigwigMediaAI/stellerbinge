@@ -67,28 +67,29 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebookF className="hover:text-[#4267B2] transition" />
+              <FaFacebookF className="md:hover:text-[#4267B2] text-[#4267B2] transition" />
             </Link>
             <Link
               href="https://www.linkedin.com/in/stellar-binge-78691321a/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedinIn className="hover:text-[#0077B5] transition" />
+              <FaLinkedinIn className="text-[#0077B5]  md:hover:text-[#0077B5] transition" />
             </Link>
+
             <Link
               href="https://www.instagram.com/stellar_binge"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram className="hover:text-[#C13584] transition" />
+              <FaInstagram className="md:hover:text-[#C13584] text-[#C13584] transition" />
             </Link>
             <Link
               href="https://www.youtube.com/@Stellar_Binge"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaYoutube className="hover:text-[#FF0000] transition" />
+              <FaYoutube className="md:hover:text-[#FF0000] text-[#FF0000] transition" />
             </Link>
           </div>
         </div>
@@ -132,7 +133,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="text-center lg:text-right space-y-2 text-gray-700 dark:text-gray-200">
+        <div className="text-center lg:text-right space-y-2 text-gray-700 dark:text-gray-500">
           <h3 className="text-lg font-semibold">Contact Us</h3>
           <p>
             Ground Floor, Stellar IT Park, C-25,

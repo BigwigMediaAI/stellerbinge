@@ -100,7 +100,7 @@ const BanquetSection: React.FC = () => {
             Elegant Banquet Hall For All Your Special Occasions
           </h2>
           <p
-            className="text-gray-100 dark:text-gray-300 text-base mb-8 mt-4"
+            className="text-gray-100 dark:text-white text-base mb-8 mt-4"
             data-aos="fade-left"
           >
             From corporate gatherings to small family celebrations, our banquet
@@ -117,7 +117,7 @@ const BanquetSection: React.FC = () => {
               <p className="text-gray-200 dark:text-gray-300 text-4xl font-sans font-semibold">
                 {events}
               </p>
-              <p className="text-gray-200 dark:text-gray-300 text-md">
+              <p className="text-gray-200 dark:text-white text-md">
                 Memorable celebrations & corporate gatherings.
               </p>
             </div>
@@ -128,7 +128,7 @@ const BanquetSection: React.FC = () => {
               <p className="text-gray-200 dark:text-gray-300 text-4xl font-semibold font-sans">
                 {capacity}
               </p>
-              <p className="text-gray-200 dark:text-gray-300 text-md">
+              <p className="text-gray-200 dark:text-white text-md">
                 Guests can be accommodated with comfort & elegance.
               </p>
             </div>
