@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Edit, Trash2, Code, ImageIcon } from "lucide-react";
 import Fuse from "fuse.js";
 import dynamic from "next/dynamic";
+import { formatHtml } from "../../utils/formatHtml";
 
 // Replace static import with dynamic:
 const AddBlog = dynamic(() => import("../../../../components/AddBlogs"), {
@@ -215,9 +216,10 @@ export default function AdminBlogsPage() {
                       <Trash2 size={16} />
                     </button>
                     <button
-                      onClick={() => {
+                      onClick={async () => {
                         setEditingSlug(blog.slug);
-                        setHtmlContent(blog.content);
+                        const formatted = formatHtml(blog.content);
+                        setHtmlContent(await formatted);
                         setShowHtmlEditor(true);
                       }}
                       className="text-yellow-500 hover:text-yellow-700"
