@@ -173,7 +173,7 @@ and banquet in Greater Noida, built on taste and trust."
             <Image
               src={foodImage}
               alt="foodImage"
-              width={600} // you can adjust based on actual image ratio
+              width={600} // you can adjust based on actual image rati
               height={400}
               className="relative z-10 w-full h-[300px] md:h-[400px] object-cover"
             />
