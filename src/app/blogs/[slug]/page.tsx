@@ -14,6 +14,7 @@ interface Blog {
   content: string;
   coverImage: string;
   datePublished: string;
+  description: string;
 }
 
 export default function BlogDetails() {
@@ -46,6 +47,12 @@ export default function BlogDetails() {
 
   return (
     <div>
+      <title>{blog.title}</title>
+      <meta name="description" content={blog.description} />
+      <link
+        rel="canonical"
+        href={`https://www.stellarbinge.com/blogs/${blog.slug}`}
+      />
       <Navbar />
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
