@@ -70,7 +70,7 @@ export default async function BlogDetails({
         )}
 
         <div
-          className="prose max-w-none"
+          className="blog-content"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
       </section>
