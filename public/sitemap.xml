@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<script src="chrome-extension://hoklmmgfnpapgjgcpechhaamimifchmp/frame_ant/frame_ant.js"/>
 <url>
 <loc>https://www.stellarbinge.com/</loc>
 <lastmod>2025-09-10</lastmod>
@@ -33,6 +34,12 @@
 <url>
 <loc>https://www.stellarbinge.com/blogs/best-restaurant-for-kitty-parties-in-noida-stellar-binge</loc>
 <lastmod>2025-09-25</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.5</priority>
+</url>
+<url>
+<loc>https://www.stellarbinge.com/blogs/best-place-for-lunch-parties-in-noida</loc>
+<lastmod>2025-10-04</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.5</priority>
 </url>
