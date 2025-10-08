@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Navbar from "../../../../components/Navbar";
 import Footer from "../../../../components/Footer";
 import MobileContactBar from "../../../../components/MobileContactBar";
+import Head from "next/head";
 
 interface Blog {
   _id: string;
@@ -11,6 +12,8 @@ interface Blog {
   coverImage: string;
   datePublished: string;
   description: string;
+    schemaMarkup?: string[];
+
 }
 
 async function getBlog(slug: string): Promise<Blog> {
@@ -19,7 +22,6 @@ async function getBlog(slug: string): Promise<Blog> {
   });
 
   if (!res.ok) throw new Error("Failed to fetch blog");
-
   return res.json();
 }
 
@@ -52,6 +54,16 @@ export default async function BlogDetails({
 
   return (
     <div>
+      <Head>
+        {blog.schemaMarkup &&
+          blog.schemaMarkup.map((schema, index) => (
+            <script
+              key={index}
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: schema }}
+            />
+          ))}
+      </Head>
       <Navbar />
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
