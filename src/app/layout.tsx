@@ -112,107 +112,172 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WWCVMPW8');
           `}
         </Script>
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Restaurant",
-              "name": "Stellar Binge",
-              "image": "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98GvNudk4vhovL8VSVyNi3x1sRQD",
-              "logo": "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98GvNudk4vhovL8VSVyNi3x1sRQD",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Ground Floor, Stellar IT Park, C-25, Sector 62",
-                "addressLocality": "Noida",
-                "postalCode": "201309",
-                "addressCountry": "IN"
-              },
-              "telephone": "+91 9599816865",
-              "servesCuisine": ["Indian", "Continental", "Multi-cuisine"],
-              "url": "https://www.stellarbinge.com/",
-              "priceRange": "₹₹",
-              "openingHoursSpecification": [{
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "11:00",
-                "closes": "23:00"
-              }],
-              "sameAs": [
-                "https://www.facebook.com/bingenoida",
-                "https://www.instagram.com/stellar_binge",
-                "https://www.youtube.com/@Stellar_Binge",
-                "https://www.linkedin.com/in/stellar-binge-78691321a/"
-              ]
-            }
-          `}
-        </Script>
-        {/* FAQ Structured Data */}
-        <Script
-          id="faq-structured-data"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "What are the opening hours of Stellar Binge?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Stellar Binge is open daily from 11:00 AM to 11:00 PM."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you accept reservations?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, you can reserve a table by calling +91 9599816865 or using the reservation form on our website."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What cuisines are served at Stellar Binge?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We serve a variety of cuisines including Indian, Continental, and Multi-cuisine dishes."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you offer delivery or takeaway services?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Stellar Binge offers both delivery and takeaway options. You can order directly through our website or contact us via phone."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Is parking available at Stellar Binge?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, ample parking is available at our location in Stellar IT Park, Sector 62, Noida."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you host events or private parties?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Stellar Binge can host events, private parties, and corporate gatherings with customized arrangements and catering."
-                  }
-                }
-              ]
-            }
-          `}
-        </Script>
+       {/* ✅ JSON-LD SCHEMA MARKUP — rendered server-side for Googlebot */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "Stellar Binge",
+        image:
+          "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98rTGm9NedXRUez1qDrPvZfLjDCK",
+        url: "https://www.stellarbinge.com/",
+        description:
+          "From our humble beginnings, we have grown into more than just a dining space – we’ve become a place where stories are shared, friendships are nurtured, and moments are celebrated. What started as a simple idea has blossomed into a welcoming home for anyone who believes that food has the power to bring people closer together.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "STELLAR IT PARK, C-25, C Block, Phase 2, Industrial Area, Sector 62",
+          addressLocality: "Noida",
+          addressRegion: "Uttar Pradesh",
+          postalCode: "201307",
+          addressCountry: "IN",
+        },
+        telephone: "+91 95998 16865",
+        sameAs: [
+          "https://www.facebook.com/bingenoida",
+          "https://www.instagram.com/stellar_binge",
+          "https://www.youtube.com/@Stellar_Binge",
+          "https://www.linkedin.com/in/stellar-binge-78691321a/",
+        ],
+      }),
+    }}
+  />
+
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        name: "Stellar Binge Menu",
+        url: "https://www.stellarbinge.com/menu",
+        hasMenuSection: [
+          { "@type": "MenuSection", name: "Soups & Greens" },
+          { "@type": "MenuSection", name: "Signature Sips" },
+          { "@type": "MenuSection", name: "Entrée" },
+          { "@type": "MenuSection", name: "The Stellar Spread" },
+          { "@type": "MenuSection", name: "Stellar Indulgence" },
+        ],
+      }),
+    }}
+  />
+
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Review",
+        itemReviewed: {
+          "@type": "Restaurant",
+          name: "Stellar Binge",
+        },
+        review: [
+          {
+            "@type": "Review",
+            author: "Anshul Bajpai",
+            datePublished: "2025-10-05",
+            reviewBody:
+              "The taste and ambient is nice peaceful and delicious.",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+            },
+          },
+          {
+            "@type": "Review",
+            author: "Vishwas Saxena",
+            datePublished: "2025-10-04",
+            reviewBody: "Food and drinks were good. Atmosphere was great.",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "4.5",
+              bestRating: "5",
+            },
+          },
+          {
+            "@type": "Review",
+            author: "Jagannath Sahu",
+            datePublished: "2025-10-03",
+            reviewBody: "Buffet is great, so is the food and service.",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+            },
+          },
+          {
+            "@type": "Review",
+            author: "Rashmi Chouhan",
+            datePublished: "2025-10-02",
+            reviewBody:
+              "This café feels like a little escape ✨ Freshly brewed coffee, delicious food, and the warmest hospitality.",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: "5",
+              bestRating: "5",
+            },
+          },
+        ],
+      }),
+    }}
+  />
+
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Does Stellar Binge offer a buffet?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, Stellar Binge offers a wide buffet with multi-cuisine options including Indian and continental dishes, perfect for both lunch and dinner gatherings.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I book a table in advance at Stellar Binge?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Absolutely! You can reserve your table in advance by calling our team or visiting our website to ensure a seamless dining experience.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does Stellar Binge host private events or parties?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, we have a dedicated banquet area ideal for hosting small private gatherings, family dinners, and corporate events.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What are the opening hours of Stellar Binge?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Stellar Binge is open daily from 11:00 AM to 11:00 PM, serving guests for both lunch and dinner.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does Stellar Binge provide easy access for guests with vehicles?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, Stellar Binge offers ample parking nearby, ensuring guests can enjoy their dining experience without parking hassles.",
+            },
+          },
+        ],
+      }),
+    }}
+  />
+       
       </head>
 
       <body
