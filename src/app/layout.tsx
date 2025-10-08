@@ -145,89 +145,11 @@ export default function RootLayout({
     }}
   />
 
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Menu",
-        name: "Stellar Binge Menu",
-        url: "https://www.stellarbinge.com/menu",
-        hasMenuSection: [
-          { "@type": "MenuSection", name: "Soups & Greens" },
-          { "@type": "MenuSection", name: "Signature Sips" },
-          { "@type": "MenuSection", name: "Entrée" },
-          { "@type": "MenuSection", name: "The Stellar Spread" },
-          { "@type": "MenuSection", name: "Stellar Indulgence" },
-        ],
-      }),
-    }}
-  />
 
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Review",
-        itemReviewed: {
-          "@type": "Restaurant",
-          name: "Stellar Binge",
-        },
-        review: [
-          {
-            "@type": "Review",
-            author: "Anshul Bajpai",
-            datePublished: "2025-10-05",
-            reviewBody:
-              "The taste and ambient is nice peaceful and delicious.",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: "5",
-              bestRating: "5",
-            },
-          },
-          {
-            "@type": "Review",
-            author: "Vishwas Saxena",
-            datePublished: "2025-10-04",
-            reviewBody: "Food and drinks were good. Atmosphere was great.",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: "4.5",
-              bestRating: "5",
-            },
-          },
-          {
-            "@type": "Review",
-            author: "Jagannath Sahu",
-            datePublished: "2025-10-03",
-            reviewBody: "Buffet is great, so is the food and service.",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: "5",
-              bestRating: "5",
-            },
-          },
-          {
-            "@type": "Review",
-            author: "Rashmi Chouhan",
-            datePublished: "2025-10-02",
-            reviewBody:
-              "This café feels like a little escape ✨ Freshly brewed coffee, delicious food, and the warmest hospitality.",
-            reviewRating: {
-              "@type": "Rating",
-              ratingValue: "5",
-              bestRating: "5",
-            },
-          },
-        ],
-      }),
-    }}
-  />
 
-  <script
-    type="application/ld+json"
+  
+
+  <script type="application/ld+json"
     dangerouslySetInnerHTML={{
       __html: JSON.stringify({
         "@context": "https://schema.org",
