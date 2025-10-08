@@ -11,7 +11,6 @@ interface Blog {
   coverImage: string;
   datePublished: string;
   description: string;
-  schemaMarkup?: string[]; // ✅ include schemaMarkup
 }
 
 async function getBlog(slug: string): Promise<Blog> {
@@ -24,13 +23,13 @@ async function getBlog(slug: string): Promise<Blog> {
   return res.json();
 }
 
-// ✅ generateMetadata using schemaMarkup from backend
+// ✅ Correctly typed generateMetadata
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }; // 👈 no Promise, just { slug: string }
+  params: Promise<{ slug: string }>; // 👈 mark params as Promise
 }): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params; // 👈 await params before using
   const blog = await getBlog(slug);
 
   return {
@@ -39,36 +38,21 @@ export async function generateMetadata({
     alternates: {
       canonical: `https://www.stellarbinge.com/blogs/${blog.slug}`,
     },
-    other: {
-      // ✅ inject schema markup as array of strings
-      "script:ld+json": blog.schemaMarkup ?? [],
-    },
   };
 }
 
-// ✅ Blog page
+// ✅ Correctly typed page
 export default async function BlogDetails({
   params,
 }: {
-  params: { slug: string }; // 👈 no Promise
+  params: Promise<{ slug: string }>; // 👈 mark params as Promise
 }) {
-  const { slug } = params;
+  const { slug } = await params; // 👈 await params
   const blog = await getBlog(slug);
 
   return (
     <div>
       <Navbar />
-
-      {/* Inject schema scripts manually in <head> as fallback */}
-      {blog.schemaMarkup &&
-        blog.schemaMarkup.map((schema, index) => (
-          <script
-            key={index}
-            type="application/ld+json"
-            // ✅ schema is already JSON string from backend
-            dangerouslySetInnerHTML={{ __html: schema }}
-          />
-        ))}
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{blog.title}</h1>
