@@ -11,6 +11,7 @@ interface Blog {
   coverImage: string;
   datePublished: string;
   description: string;
+  schemaMarkup?: string[];
 }
 
 async function getBlog(slug: string): Promise<Blog> {
@@ -23,13 +24,12 @@ async function getBlog(slug: string): Promise<Blog> {
   return res.json();
 }
 
-// ✅ Correctly typed generateMetadata
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>; // 👈 mark params as Promise
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params; // 👈 await params before using
+  const { slug } = await params;
   const blog = await getBlog(slug);
 
   return {
@@ -41,18 +41,30 @@ export async function generateMetadata({
   };
 }
 
-// ✅ Correctly typed page
 export default async function BlogDetails({
   params,
 }: {
-  params: Promise<{ slug: string }>; // 👈 mark params as Promise
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params; // 👈 await params
+  const { slug } = await params;
   const blog = await getBlog(slug);
 
   return (
     <div>
       <Navbar />
+
+      {Array.isArray(blog.schemaMarkup) && blog.schemaMarkup.length > 0 && (
+  <head>
+    {blog.schemaMarkup.map((schema: string, index: number) => (
+      <script
+        key={index}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: schema }}
+      />
+    ))}
+  </head>
+)}
+
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{blog.title}</h1>
