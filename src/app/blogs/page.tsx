@@ -24,6 +24,7 @@ function Blogs() {
   const [filteredBlogs, setFilteredBlogs] = useState<Blog[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   const blogsPerPage = 6;
 
@@ -40,6 +41,8 @@ function Blogs() {
         setFilteredBlogs(data);
       } catch (err) {
         console.error("Error fetching blogs:", err);
+      } finally {
+        setLoading(false); // <-- stop loading after fetch
       }
     };
     fetchBlogs();
@@ -95,7 +98,11 @@ Greater Noida. Stay updated with fresh ideas and experiences."
 
         {/* Blog grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {currentBlogs.length > 0 ? (
+          {loading ? (
+            <p className="col-span-3 text-center text-gray-500">
+              Loading blogs...
+            </p>
+          ) : currentBlogs.length > 0 ? (
             currentBlogs.map((blog) => (
               <div
                 key={blog._id}
