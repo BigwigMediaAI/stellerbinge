@@ -14,14 +14,28 @@ import {
   Bar,
 } from "recharts";
 
+// -----------------------------
+// ✅ Type Definitions
+// -----------------------------
+interface GACityData {
+  city: string;
+  activeUsers: number;
+}
+
+interface GATrafficSource {
+  source: string;
+  totalUsers: number;
+  sessions: number;
+  activeUsers: number;
+}
+
 export default function AdminDashboard() {
   const [totalSubscribers, setTotalSubscribers] = useState<number | null>(null);
   const [totalBlogs, setTotalBlogs] = useState<number | null>(null);
   const [totalQueries, setTotalQueries] = useState<number | null>(null);
-  const [gaGraphData, setGaGraphData] = useState<any[]>([]);
-  const [gaSummaryData, setGaSummaryData] = useState<any[]>([]);
+  const [gaGraphData, setGaGraphData] = useState<GACityData[]>([]);
+  const [trafficSources, setTrafficSources] = useState<GATrafficSource[]>([]);
   const [loading, setLoading] = useState(true);
-  const [trafficSources, setTrafficSources] = useState<any[]>([]);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -54,22 +68,32 @@ export default function AdminDashboard() {
           ).then((r) => r.json()),
         ]);
 
-        // Parse the GA data into a chart-friendly format
+        // ✅ Parse city-level data
         const rows = gaDataRes?.rows || [];
-        const parsedData = rows.map((row: any) => ({
-          city: row.dimensionValues?.[0]?.value || "Unknown",
-          activeUsers: Number(row.metricValues?.[0]?.value || 0),
-        }));
+        const parsedData: GACityData[] = rows.map(
+          (row: {
+            dimensionValues: { value: string }[];
+            metricValues: { value: string }[];
+          }) => ({
+            city: row.dimensionValues?.[0]?.value || "Unknown",
+            activeUsers: Number(row.metricValues?.[0]?.value || 0),
+          })
+        );
         setGaGraphData(parsedData);
 
         // ✅ Parse summary data (Traffic Source Breakdown)
         const summaryRows = gaSummaryRes?.rows || [];
-        const trafficData = summaryRows.map((row: any) => ({
-          source: row.dimensionValues?.[0]?.value || "Unknown",
-          totalUsers: Number(row.metricValues?.[0]?.value || 0),
-          sessions: Number(row.metricValues?.[1]?.value || 0),
-          activeUsers: Number(row.metricValues?.[2]?.value || 0),
-        }));
+        const trafficData: GATrafficSource[] = summaryRows.map(
+          (row: {
+            dimensionValues: { value: string }[];
+            metricValues: { value: string }[];
+          }) => ({
+            source: row.dimensionValues?.[0]?.value || "Unknown",
+            totalUsers: Number(row.metricValues?.[0]?.value || 0),
+            sessions: Number(row.metricValues?.[1]?.value || 0),
+            activeUsers: Number(row.metricValues?.[2]?.value || 0),
+          })
+        );
         setTrafficSources(trafficData);
       } catch (err) {
         console.error("Failed to fetch dashboard data:", err);
@@ -114,6 +138,7 @@ export default function AdminDashboard() {
         />
       </div>
 
+      {/* Google Analytics Traffic Source Breakdown */}
       <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-5xl mx-auto space-y-6 mb-10">
         <h3 className="text-xl font-semibold text-center text-gray-800">
           Google Analytics - Traffic Source Breakdown
@@ -161,7 +186,8 @@ export default function AdminDashboard() {
           </table>
         </div>
       </div>
-      {/* Google Analytics Bar Chart */}
+
+      {/* Google Analytics Active Users by City */}
       <div className="bg-white p-6 rounded-xl shadow-md w-full max-w-5xl mx-auto space-y-6">
         <h3 className="text-xl font-semibold text-center text-gray-800">
           Google Analytics - Active Users by City
@@ -180,7 +206,7 @@ export default function AdminDashboard() {
           <p className="text-center text-gray-500">No analytics data found.</p>
         )}
 
-        {/* Detailed Table */}
+        {/* City Data Table */}
         <div className="overflow-x-auto text-black">
           <table className="min-w-full text-sm text-left border border-gray-200">
             <thead className="bg-gray-100 text-gray-600 uppercase text-xs">
@@ -202,8 +228,6 @@ export default function AdminDashboard() {
           </table>
         </div>
       </div>
-
-      {/* 🔽 Add your new Traffic Source Breakdown block right below this */}
     </div>
   );
 }
