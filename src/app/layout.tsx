@@ -28,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Stellar Binge | Best Restaurant & Banquet in Noida</title>
+        <title>Stellar Binge | Fine Dining & Banquet in Noida</title>
         <meta
           name="description"
-          content="Discover Stellar Binge – a top dining destination and banquet hall in Greater Noida offering fine dining, luxury events, and unforgettable experiences."
+          content="Experience Stellar Binge – Noida’s premier restaurant & banquet hall offering exquisite dining, luxury events, and unforgettable memories."
         />
         {/* Google Search Console verification */}
         <link rel="canonical" href="https://www.stellarbinge.com" />
@@ -39,12 +39,12 @@ export default function RootLayout({
           name="google-site-verification"
           content="dxj-iVuktppnnUldgn-dECo6FjjBkVmAMqzMsoF6Yx8"
         />
-{/* Meta Pixel Code */}
-      <Script
-        id="facebook-pixel"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+        {/* Meta Pixel Code */}
+        <Script
+          id="facebook-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -56,20 +56,19 @@ export default function RootLayout({
             fbq('init', '2183816655461000');
             fbq('track', 'PageView');
           `,
-        }}
-      />
-
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=2183816655461000&ev=PageView&noscript=1"
+          }}
         />
-      </noscript>
-      {/* End Meta Pixel Code */}
 
-        
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=2183816655461000&ev=PageView&noscript=1"
+          />
+        </noscript>
+        {/* End Meta Pixel Code */}
+
         {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
@@ -112,94 +111,90 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-WWCVMPW8');
           `}
         </Script>
-       {/* ✅ JSON-LD SCHEMA MARKUP — rendered server-side for Googlebot */}
-  <script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        name: "Stellar Binge",
-        image:
-          "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98rTGm9NedXRUez1qDrPvZfLjDCK",
-        url: "https://www.stellarbinge.com/",
-        description:
-          "From our humble beginnings, we have grown into more than just a dining space – we’ve become a place where stories are shared, friendships are nurtured, and moments are celebrated. What started as a simple idea has blossomed into a welcoming home for anyone who believes that food has the power to bring people closer together.",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress:
-            "STELLAR IT PARK, C-25, C Block, Phase 2, Industrial Area, Sector 62",
-          addressLocality: "Noida",
-          addressRegion: "Uttar Pradesh",
-          postalCode: "201307",
-          addressCountry: "IN",
-        },
-        telephone: "+91 95998 16865",
-        sameAs: [
-          "https://www.facebook.com/bingenoida",
-          "https://www.instagram.com/stellar_binge",
-          "https://www.youtube.com/@Stellar_Binge",
-          "https://www.linkedin.com/in/stellar-binge-78691321a/",
-        ],
-      }),
-    }}
-  />
+        {/* ✅ JSON-LD SCHEMA MARKUP — rendered server-side for Googlebot */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Stellar Binge",
+              image:
+                "https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_98rTGm9NedXRUez1qDrPvZfLjDCK",
+              url: "https://www.stellarbinge.com/",
+              description:
+                "From our humble beginnings, we have grown into more than just a dining space – we’ve become a place where stories are shared, friendships are nurtured, and moments are celebrated. What started as a simple idea has blossomed into a welcoming home for anyone who believes that food has the power to bring people closer together.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress:
+                  "STELLAR IT PARK, C-25, C Block, Phase 2, Industrial Area, Sector 62",
+                addressLocality: "Noida",
+                addressRegion: "Uttar Pradesh",
+                postalCode: "201307",
+                addressCountry: "IN",
+              },
+              telephone: "+91 95998 16865",
+              sameAs: [
+                "https://www.facebook.com/bingenoida",
+                "https://www.instagram.com/stellar_binge",
+                "https://www.youtube.com/@Stellar_Binge",
+                "https://www.linkedin.com/in/stellar-binge-78691321a/",
+              ],
+            }),
+          }}
+        />
 
-
-
-  
-
-  <script type="application/ld+json"
-    dangerouslySetInnerHTML={{
-      __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Does Stellar Binge offer a buffet?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes, Stellar Binge offers a wide buffet with multi-cuisine options including Indian and continental dishes, perfect for both lunch and dinner gatherings.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Can I book a table in advance at Stellar Binge?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Absolutely! You can reserve your table in advance by calling our team or visiting our website to ensure a seamless dining experience.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Does Stellar Binge host private events or parties?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes, we have a dedicated banquet area ideal for hosting small private gatherings, family dinners, and corporate events.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "What are the opening hours of Stellar Binge?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Stellar Binge is open daily from 11:00 AM to 11:00 PM, serving guests for both lunch and dinner.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Does Stellar Binge provide easy access for guests with vehicles?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes, Stellar Binge offers ample parking nearby, ensuring guests can enjoy their dining experience without parking hassles.",
-            },
-          },
-        ],
-      }),
-    }}
-  />
-       
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "Does Stellar Binge offer a buffet?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, Stellar Binge offers a wide buffet with multi-cuisine options including Indian and continental dishes, perfect for both lunch and dinner gatherings.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I book a table in advance at Stellar Binge?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Absolutely! You can reserve your table in advance by calling our team or visiting our website to ensure a seamless dining experience.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does Stellar Binge host private events or parties?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, we have a dedicated banquet area ideal for hosting small private gatherings, family dinners, and corporate events.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What are the opening hours of Stellar Binge?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Stellar Binge is open daily from 11:00 AM to 11:00 PM, serving guests for both lunch and dinner.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Does Stellar Binge provide easy access for guests with vehicles?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, Stellar Binge offers ample parking nearby, ensuring guests can enjoy their dining experience without parking hassles.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
 
       <body

@@ -49,11 +49,10 @@ export default function BanquetPage() {
 
   return (
     <div>
-      <title>Banquet Hall in Noida | Stellar Binge Events Venue</title>
+      <title>Stellar Binge | Premier Banquet Hall & Event Venue Noida</title>
       <meta
         name="description"
-        content="Host weddings, parties, and corporate events at Stellar Binge banquet hall in 
-Greater Noida. Spacious, elegant, and perfect for every celebration."
+        content="Host unforgettable events at Stellar Binge in Noida – a premier banquet hall offering fine dining, luxury setups, and personalized event experiences."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/banquet" />
       <Navbar />

@@ -82,11 +82,10 @@ export default function OurCreationsPage() {
 
   return (
     <div>
-      <title>Our Creations | Stellar Binge Culinary Gallery in Noida</title>
+      <title>Stellar Binge Gallery | Exquisite Dining in Noida</title>
       <meta
         name="description"
-        content="Explore Stellar Binge’s culinary gallery – a showcase of flavors, artistry, and passion. 
-in chef-crafted dishes that blend taste with visual elegance."
+        content="Step inside Stellar Binge’s gallery in Noida and discover artfully crafted dishes, elegant décor, and a dining experience that delights every sense."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/gallery" />
 
