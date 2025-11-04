@@ -4,13 +4,14 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { MdDeliveryDining, MdOutlineLocalDining } from "react-icons/md";
 import { RiTakeawayFill } from "react-icons/ri";
 import contactBanner from "../../../assets/hero5.jpg";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
 import toast, { Toaster } from "react-hot-toast";
 import MobileContactBar from "../../../components/MobileContactBar";
+import BookingModal from "../../../components/Popup";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,6 +22,19 @@ export default function ContactPage() {
   });
 
   const [loading, setLoading] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -222,6 +236,7 @@ export default function ContactPage() {
       </section>
       <Footer />
       <MobileContactBar />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import banner from "../../../assets/hero1.webp";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MobileContactBar from "../../../components/MobileContactBar";
 
 // ✅ Import data & type
@@ -15,9 +15,23 @@ import {
   type GalleryItem,
 } from "../../../src/data/data";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
+import BookingModal from "../../../components/Popup";
 
 export default function OurCreationsPage() {
   const creationsRef = useRef<HTMLDivElement | null>(null);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
 
   const scrollToNext = () => {
     if (creationsRef.current) {
@@ -188,6 +202,8 @@ export default function OurCreationsPage() {
       <Footer />
       <MobileContactBar />
       <ScrollToTopButton />
+
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }

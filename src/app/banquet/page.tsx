@@ -22,8 +22,9 @@ import upwards from "../../../assets/upwards.png";
 import downwards from "../../../assets/downwards.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
+import BookingModal from "../../../components/Popup";
 
 export default function BanquetPage() {
   const banquetsRef = useRef<HTMLDivElement | null>(null);
@@ -46,6 +47,19 @@ export default function BanquetPage() {
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
 
   return (
     <div>
@@ -300,6 +314,7 @@ export default function BanquetPage() {
       </main>
       <Footer />
       <ScrollToTopButton />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }

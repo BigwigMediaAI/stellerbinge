@@ -5,7 +5,7 @@ import DiningExperienceSection from "../../components/DineWithUs";
 import About from "../../components/About";
 import Footer from "../../components/Footer";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import hero1 from "../../assets/ab11.webp";
@@ -23,6 +23,7 @@ import BanquetSection from "../../components/BanquetSection";
 import Special from "../../components/Special";
 import Culinary from "../../components/Culinary";
 import BlogPreview from "../../components/Blogs";
+import BookingModal from "../../components/Popup";
 
 const fundamentals = [
   { poster: hero6 },
@@ -34,9 +35,20 @@ const fundamentals = [
 ];
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     AOS.init({ duration: 1200 });
+
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
   }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
 
   return (
     <div>
@@ -84,6 +96,7 @@ export default function Home() {
       <Footer />
       <ScrollToTopButton />
       <MobileContactBar />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
       {/* <WhatsAppButton /> */}
     </div>
   );

@@ -6,6 +6,7 @@ import Footer from "../../../components/Footer";
 import Fuse from "fuse.js";
 import Image from "next/image";
 import MobileContactBar from "../../../components/MobileContactBar";
+import BookingModal from "../../../components/Popup";
 
 interface Blog {
   _id: string;
@@ -25,6 +26,19 @@ function Blogs() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
 
   const blogsPerPage = 6;
 
@@ -179,6 +193,7 @@ function Blogs() {
       {/* Footer */}
       <Footer />
       <MobileContactBar />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }
