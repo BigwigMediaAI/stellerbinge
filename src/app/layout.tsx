@@ -28,10 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Stellar Binge | Fine Dining & Banquet in Noida</title>
+        <title>
+          Experience Luxury Dining in Noida | Stellar Binge Restaurant & Lounge
+          Bar
+        </title>
         <meta
           name="description"
-          content="Experience Stellar Binge – Noida’s premier restaurant & banquet hall offering exquisite dining, luxury events, and unforgettable memories."
+          content="Step into Stellar Binge Restaurant & Lounge Bar - Noida’s ultimate destination for fine dining, cocktails & celebrations in style."
         />
         {/* Google Search Console verification */}
         <link rel="canonical" href="https://www.stellarbinge.com" />

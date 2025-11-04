@@ -73,10 +73,12 @@ function Blogs() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <title>Stellar Binge Blog | Dining, Events & Lifestyle Tips</title>
+      <title>
+        Food & Lifestyle Trends | Stellar Binge Restaurant & Lounge Bar Noida
+      </title>
       <meta
         name="description"
-        content="Read Stellar Binge’s blog for dining tips, event ideas, and lifestyle insights from Noida’s premier restaurant and banquet destination."
+        content="Get dining tips, cocktail trends & event ideas from Stellar Binge Restaurant & Lounge Bar - your insider to Noida’s luxury scene."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/blogs" />
       {/* Navbar */}

@@ -46,11 +46,12 @@ export default function OurJourney() {
   };
   return (
     <div>
-      <title>Our Journey | Story of Stellar Binge in Noida</title>
+      <title>
+        From Vision to Icon | The Story of Stellar Binge Restaurant & Lounge Bar
+      </title>
       <meta
         name="description"
-        content="Discover the journey of Stellar Binge – from vision to becoming a leading restaurant 
-and banquet in Greater Noida, built on taste and trust."
+        content="Discover how Stellar Binge Restaurant & Lounge Bar became Noida’s signature name for fine dining, lounge & banquet luxury."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/our-journey" />
       <Navbar />

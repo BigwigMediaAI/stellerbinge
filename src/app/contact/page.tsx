@@ -67,10 +67,12 @@ export default function ContactPage() {
 
   return (
     <div className=" text-black  transition-colors">
-      <title>Contact Stellar Binge | Noida Restaurant & Banquet</title>
+      <title>
+        Book Your Table Now | Stellar Binge Restaurant & Lounge Bar Noida
+      </title>
       <meta
         name="description"
-        content="Get in touch with Stellar Binge in Noida for reservations, inquiries, or event bookings at our premier restaurant and luxury banquet hall."
+        content="Reserve your table or event at Stellar Binge Restaurant & Lounge Bar - Noida’s favorite spot for food & celebrations."
       />
       {/* Toast container */}
       <link rel="canonical" href="https://www.stellarbinge.com/contact" />

@@ -167,10 +167,12 @@ export default function MenuPage() {
 
   return (
     <div className="bg-white">
-      <title>Stellar Binge Menu | Multi-Cuisine Dining & Banquet</title>
+      <title>
+        Discover Noida’s Most Loved Menu | Stellar Binge Restaurant & Lounge Bar
+      </title>
       <meta
         name="description"
-        content="Explore Stellar Binge’s menu in Greater Noida – enjoy multi-cuisine dishes, fine dining, and luxury banquet experiences for unforgettable moments."
+        content="Taste global cuisines & signature cocktails at Stellar Binge Restaurant & Lounge Bar - where every bite feels extraordinary."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/menu" />
 
