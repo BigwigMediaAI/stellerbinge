@@ -76,7 +76,7 @@ export default async function BlogDetails({
           <img
             src={blog.coverImage}
             alt={blog.title}
-            className="rounded-lg w-full h-[400px] object-cover mb-6"
+            className="rounded-lg w-full h-[600px] object-cover mb-6"
           />
         )}
 
