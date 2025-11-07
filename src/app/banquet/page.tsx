@@ -22,8 +22,9 @@ import upwards from "../../../assets/upwards.png";
 import downwards from "../../../assets/downwards.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
+import BookingModal from "../../../components/Popup";
 
 export default function BanquetPage() {
   const banquetsRef = useRef<HTMLDivElement | null>(null);
@@ -47,12 +48,27 @@ export default function BanquetPage() {
     }
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
+
   return (
     <div>
-      <title>Stellar Binge | Premier Banquet Hall & Event Venue Noida</title>
+      <title>
+        Host Your Dream Event in Noida | Stellar Binge Banquet & Lounge Bar
+      </title>
       <meta
         name="description"
-        content="Host unforgettable events at Stellar Binge in Noida – a premier banquet hall offering fine dining, luxury setups, and personalized event experiences."
+        content="Plan weddings & celebrations at Stellar Binge Restaurant & Lounge Bar - luxury banquets & fine dining under one roof."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/banquet" />
       <Navbar />
@@ -298,6 +314,7 @@ export default function BanquetPage() {
       </main>
       <Footer />
       <ScrollToTopButton />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "../../../components/Navbar";
 import Footer from "../../../components/Footer";
 import banner from "../../../assets/hero1.webp";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MobileContactBar from "../../../components/MobileContactBar";
 import type { StaticImageData } from "next/image";
 
@@ -41,6 +41,7 @@ import menuPage31 from "../../../assets/menu/tandoor-veg.webp";
 import menuPage32 from "../../../assets/menu/yougets & deserts.webp";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
 import Head from "next/head";
+import BookingModal from "../../../components/Popup";
 
 export default function MenuPage() {
   const menuRef = useRef<HTMLDivElement | null>(null);
@@ -146,6 +147,7 @@ export default function MenuPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState<StaticImageData[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = (images: StaticImageData[], index: number) => {
     setCurrentImages(images);
@@ -165,12 +167,25 @@ export default function MenuPage() {
       prev === currentImages.length - 1 ? 0 : prev + 1
     );
 
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
+
   return (
     <div className="bg-white">
-      <title>Stellar Binge Menu | Multi-Cuisine Dining & Banquet</title>
+      <title>
+        Discover Noida’s Most Loved Menu | Stellar Binge Restaurant & Lounge Bar
+      </title>
       <meta
         name="description"
-        content="Explore Stellar Binge’s menu in Greater Noida – enjoy multi-cuisine dishes, fine dining, and luxury banquet experiences for unforgettable moments."
+        content="Taste global cuisines & signature cocktails at Stellar Binge Restaurant & Lounge Bar - where every bite feels extraordinary."
       />
       <link rel="canonical" href="https://www.stellarbinge.com/menu" />
 
@@ -302,6 +317,7 @@ export default function MenuPage() {
       <Footer />
       <MobileContactBar />
       <ScrollToTopButton />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }

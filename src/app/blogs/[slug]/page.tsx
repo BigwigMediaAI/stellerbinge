@@ -54,17 +54,16 @@ export default async function BlogDetails({
       <Navbar />
 
       {Array.isArray(blog.schemaMarkup) && blog.schemaMarkup.length > 0 && (
-  <head>
-    {blog.schemaMarkup.map((schema: string, index: number) => (
-      <script
-        key={index}
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schema }}
-      />
-    ))}
-  </head>
-)}
-
+        <head>
+          {blog.schemaMarkup.map((schema: string, index: number) => (
+            <script
+              key={index}
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: schema }}
+            />
+          ))}
+        </head>
+      )}
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{blog.title}</h1>
@@ -77,7 +76,7 @@ export default async function BlogDetails({
           <img
             src={blog.coverImage}
             alt={blog.title}
-            className="rounded-lg w-full h-[400px] object-cover mb-6"
+            className="rounded-lg w-full h-[600px] object-cover mb-6"
           />
         )}
 

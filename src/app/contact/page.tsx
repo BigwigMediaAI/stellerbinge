@@ -4,13 +4,14 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
 import { MdDeliveryDining, MdOutlineLocalDining } from "react-icons/md";
 import { RiTakeawayFill } from "react-icons/ri";
 import contactBanner from "../../../assets/hero5.jpg";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Navbar from "../../../components/Navbar";
 import Image from "next/image";
 import Footer from "../../../components/Footer";
 import toast, { Toaster } from "react-hot-toast";
 import MobileContactBar from "../../../components/MobileContactBar";
+import BookingModal from "../../../components/Popup";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -21,6 +22,19 @@ export default function ContactPage() {
   });
 
   const [loading, setLoading] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const hasSeenPopup = sessionStorage.getItem("bookingPopupSeen");
+    if (!hasSeenPopup) {
+      const timer = setTimeout(() => setIsModalOpen(true), 3000); // show after 7s
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  // ✅ When modal closes manually or user submits successfully
+  const handleClose = () => setIsModalOpen(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -67,10 +81,12 @@ export default function ContactPage() {
 
   return (
     <div className=" text-black  transition-colors">
-      <title>Contact Stellar Binge | Noida Restaurant & Banquet</title>
+      <title>
+        Book Your Table Now | Stellar Binge Restaurant & Lounge Bar Noida
+      </title>
       <meta
         name="description"
-        content="Get in touch with Stellar Binge in Noida for reservations, inquiries, or event bookings at our premier restaurant and luxury banquet hall."
+        content="Reserve your table or event at Stellar Binge Restaurant & Lounge Bar - Noida’s favorite spot for food & celebrations."
       />
       {/* Toast container */}
       <link rel="canonical" href="https://www.stellarbinge.com/contact" />
@@ -220,6 +236,7 @@ export default function ContactPage() {
       </section>
       <Footer />
       <MobileContactBar />
+      <BookingModal isOpen={isModalOpen} onClose={handleClose} />
     </div>
   );
 }
