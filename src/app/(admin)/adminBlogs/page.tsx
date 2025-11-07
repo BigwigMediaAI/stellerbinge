@@ -192,9 +192,9 @@ export default function AdminBlogsPage() {
                   className="even:bg-[#111] hover:bg-[#222] transition"
                 >
                   <td className="px-3 py-2">{blog.title}</td>
-                  <td className="px-3 py-2 max-w-[200px] truncate">
+                  <td className="px-3 py-2 max-w-[200px]">
                     <div
-                      className="line-clamp-2 text-gray-300"
+                      className="line-clamp-3 text-gray-300"
                       dangerouslySetInnerHTML={{ __html: blog.content }}
                     />
                   </td>
