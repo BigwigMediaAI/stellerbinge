@@ -83,12 +83,19 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
       } else {
         setErrors({ api: res.data.message || "Something went wrong!" });
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Booking failed:", error);
-      setErrors({
-        api:
-          error.response?.data?.message || "Something went wrong. Try again!",
-      });
+
+      if (axios.isAxiosError(error)) {
+        setErrors({
+          api:
+            error.response?.data?.message || "Something went wrong. Try again!",
+        });
+      } else {
+        setErrors({
+          api: "An unexpected error occurred. Please try again.",
+        });
+      }
     } finally {
       setLoading(false);
     }
