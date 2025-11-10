@@ -52,6 +52,16 @@ export default function Home() {
 
   return (
     <div>
+      <title>
+        Experience Luxury Dining in Noida | Stellar Binge Restaurant & Lounge
+        Bar
+      </title>
+      <meta
+        name="description"
+        content="Step into Stellar Binge Restaurant & Lounge Bar - Noida’s ultimate destination for fine dining, cocktails & celebrations in style."
+      />
+      {/* Google Search Console verification */}
+      <link rel="canonical" href="https://www.stellarbinge.com" />
       <Navbar />
       <Hero />
       <DiningExperienceSection />
