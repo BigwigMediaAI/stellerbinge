@@ -50,6 +50,7 @@ function Blogs() {
           `${process.env.NEXT_PUBLIC_API_BASE}/blog/viewblog`
         );
         const data = await res.json();
+        console.log(data);
         setBlogs(data);
         console.log(data);
         setFilteredBlogs(data);

@@ -10,7 +10,7 @@ interface Blog {
   content: string;
   coverImage: string;
   datePublished: string;
-  description: string;
+  excerpt: string;
   schemaMarkup?: string[];
 }
 
@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   return {
     title: blog.title,
-    description: blog.description,
+    description: blog.excerpt,
     alternates: {
       canonical: `https://www.stellarbinge.com/blogs/${blog.slug}`,
     },
@@ -53,17 +53,14 @@ export default async function BlogDetails({
     <div>
       <Navbar />
 
-      {Array.isArray(blog.schemaMarkup) && blog.schemaMarkup.length > 0 && (
-        <head>
-          {blog.schemaMarkup.map((schema: string, index: number) => (
-            <script
-              key={index}
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: schema }}
-            />
-          ))}
-        </head>
-      )}
+      {Array.isArray(blog.schemaMarkup) &&
+        blog.schemaMarkup.map((markup, idx) => (
+          <script
+            key={idx}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: markup }}
+          />
+        ))}
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{blog.title}</h1>
