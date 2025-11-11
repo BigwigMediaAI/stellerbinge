@@ -81,6 +81,27 @@ export default function ContactPage() {
 
   return (
     <div className=" text-black  transition-colors">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Book Your Table Now | Stellar Binge Restaurant & Lounge Bar Noida"
+      />
+      <meta
+        property="og:description"
+        content="Reserve your table or event at Stellar Binge Restaurant & Lounge Bar - Noida’s favorite spot for food & celebrations."
+      />
+      <meta
+        property="og:image"
+        content="https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_7jvcJ2igqgFfTW1XEFdTtyiMytRf"
+      />
+      <meta property="og:url" content="https://www.stellarbinge.com/contact" />
+      <meta property="og:type" content="restaurant.contact" />
+      <meta
+        property="og:site_name"
+        content="Stellar Binge Restaurant & Lounge Bar"
+      />
+      <meta property="og:locale" content="en_US" />
+
       <title>
         Book Your Table Now | Stellar Binge Restaurant & Lounge Bar Noida
       </title>

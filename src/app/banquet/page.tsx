@@ -63,6 +63,27 @@ export default function BanquetPage() {
 
   return (
     <div>
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Host Your Dream Event in Noida | Stellar Binge Banquet & Lounge Bar"
+      />
+      <meta
+        property="og:description"
+        content="Plan weddings & celebrations at Stellar Binge Restaurant & Lounge Bar - luxury banquets & fine dining under one roof."
+      />
+      <meta
+        property="og:image"
+        content="https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_7jvcJ2igqgFfTW1XEFdTtyiMytRf"
+      />
+      <meta property="og:url" content="https://www.stellarbinge.com/banquet" />
+      <meta property="og:type" content="restaurant.event" />
+      <meta
+        property="og:site_name"
+        content="Stellar Binge Restaurant & Lounge Bar"
+      />
+      <meta property="og:locale" content="en_US" />
+
       <title>
         Host Your Dream Event in Noida | Stellar Binge Banquet & Lounge Bar
       </title>

@@ -88,6 +88,27 @@ function Blogs() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta
+        property="og:title"
+        content="Food & Lifestyle Trends | Stellar Binge Restaurant & Lounge Bar Noida"
+      />
+      <meta
+        property="og:description"
+        content="Get dining tips, cocktail trends & event ideas from Stellar Binge Restaurant & Lounge Bar - your insider to Noida’s luxury scene."
+      />
+      <meta
+        property="og:image"
+        content="https://www.stellarbinge.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3fb31e53.png&w=384&q=75&dpl=dpl_7jvcJ2igqgFfTW1XEFdTtyiMytRf"
+      />
+      <meta property="og:url" content="https://www.stellarbinge.com/blogs" />
+      <meta property="og:type" content="article" />
+      <meta
+        property="og:site_name"
+        content="Stellar Binge Restaurant & Lounge Bar"
+      />
+      <meta property="og:locale" content="en_US" />
+
       <title>
         Food & Lifestyle Trends | Stellar Binge Restaurant & Lounge Bar Noida
       </title>
