@@ -51,6 +51,21 @@ export default async function BlogDetails({
 
   return (
     <div>
+      {/* <!-- Open Graph Meta Tags --> */}
+      <meta property="og:title" content={blog.title} />
+      <meta property="og:description" content={blog.excerpt} />
+      <meta property="og:image" content={blog.coverImage} />
+      <meta
+        property="og:url"
+        content={`https://www.stellarbinge.com/blogs/${blog.slug}`}
+      />
+      <meta property="og:type" content="article" />
+      <meta
+        property="og:site_name"
+        content="Stellar Binge Restaurant & Lounge Bar"
+      />
+      <meta property="og:locale" content="en_US" />
+
       <Navbar />
 
       {Array.isArray(blog.schemaMarkup) &&
