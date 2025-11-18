@@ -4,27 +4,23 @@ import { useEffect, useState } from "react";
 
 interface Contact {
   _id: string;
-  fullName: string;
-  phoneNumber: string;
+  name: string;
   email: string;
-  bookingType: string;
-  dateTime: Date;
-  numberOfGuests: number;
+  subject: string;
   message: string;
   createdAt: string;
 }
 
-export default function AdminQueriesPage() {
+export default function ContactPage() {
   const [queries, setQueries] = useState<Contact[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchQueries = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/lead`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/query`);
         const data = await res.json();
-        // console.log(data);
-        setQueries(data.leads);
+        setQueries(data.data);
       } catch (error) {
         console.error("Error fetching queries:", error);
       } finally {
@@ -38,7 +34,7 @@ export default function AdminQueriesPage() {
   return (
     <div className="bg-[#0b121a] text-white p-6 rounded-lg shadow-lg">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-white">Leads Queries</h1>
+        <h1 className="text-3xl font-bold text-white">Contact Queries</h1>
         <hr className="mt-4 border-gray-700" />
       </div>
 
@@ -53,17 +49,8 @@ export default function AdminQueriesPage() {
               <tr className="bg-gray-800 text-left">
                 <th className="py-3 px-4 border-b border-gray-700">#</th>
                 <th className="py-3 px-4 border-b border-gray-700">Name</th>
-                <th className="py-3 px-4 border-b border-gray-700">
-                  Phone Number
-                </th>
                 <th className="py-3 px-4 border-b border-gray-700">Email</th>
-                <th className="py-3 px-4 border-b border-gray-700">
-                  Booking Type
-                </th>
-
-                <th className="py-3 px-4 border-b border-gray-700">
-                  Number of Guests
-                </th>
+                <th className="py-3 px-4 border-b border-gray-700">Subject</th>
                 <th className="py-3 px-4 border-b border-gray-700">Message</th>
                 <th className="py-3 px-4 border-b border-gray-700">Date</th>
               </tr>
@@ -78,19 +65,13 @@ export default function AdminQueriesPage() {
                     {index + 1}
                   </td>
                   <td className="py-3 px-4 border-b border-gray-700">
-                    {query.fullName}
-                  </td>
-                  <td className="py-3 px-4 border-b border-gray-700">
-                    {query.phoneNumber}
+                    {query.name}
                   </td>
                   <td className="py-3 px-4 border-b border-gray-700">
                     {query.email}
                   </td>
                   <td className="py-3 px-4 border-b border-gray-700">
-                    {query.bookingType || "-"}
-                  </td>
-                  <td className="py-3 px-4 border-b border-gray-700">
-                    {query.numberOfGuests || "-"}
+                    {query.subject || "-"}
                   </td>
                   <td className="py-3 px-4 border-b border-gray-700">
                     {query.message}

@@ -105,7 +105,7 @@ export default function OurJourney() {
             <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-color)] mb-6">
               Our Story
             </h2>
-            <p className="text-md text-gray-800 dark:text-gray-200 leading-loose mb-4">
+            <p className="text-md text-gray-800 dark:text-gray-200 leading-loose mb-4 text-justify">
               From our humble beginnings, we have grown into more than just a
               dining space – we’ve become a place where stories are shared,
               friendships are nurtured, and moments are celebrated. What started
@@ -114,7 +114,7 @@ export default function OurJourney() {
               together.
             </p>
 
-            <p className="text-md text-gray-800 dark:text-gray-200 leading-loose">
+            <p className="text-md text-gray-800 dark:text-gray-200 leading-loose text-justify">
               Every dish we serve carries a piece of our journey – a blend of
               tradition, passion, and innovation passed down through time. For
               us, food isn’t just about flavors on a plate; it’s about creating
@@ -140,7 +140,7 @@ export default function OurJourney() {
             <h2 className="text-4xl font-bold text-white">
               Our <span className="text-black">Culinary</span> Philosophy
             </h2>
-            <p className="text-lg text-gray-300 dark:text-gray-300">
+            <p className="text-lg text-gray-300 dark:text-gray-300 text-justify">
               At our restaurant, food is not just about taste , it’s about
               passion, freshness, and authenticity. We believe in sourcing the
               finest local ingredients and crafting every dish with love, care,

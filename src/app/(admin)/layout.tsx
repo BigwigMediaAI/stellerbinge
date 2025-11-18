@@ -27,6 +27,7 @@ export default function AdminDashboardLayout({
     { name: "Subscribers", href: "/adminSubscribers", icon: Users },
     { name: "Blogs", href: "/adminBlogs", icon: FileText },
     { name: "Query", href: "/query", icon: ShieldQuestionMark },
+    { name: "Contact-Form", href: "/contact-form", icon: ShieldQuestionMark },
   ];
 
   return (
