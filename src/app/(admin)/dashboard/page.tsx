@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Mail, FileText } from "lucide-react";
+import { Mail, FileText, MessageSquare } from "lucide-react";
 import { BsQuestionOctagonFill } from "react-icons/bs";
 import {
   ResponsiveContainer,
@@ -32,7 +32,10 @@ interface GATrafficSource {
 export default function AdminDashboard() {
   const [totalSubscribers, setTotalSubscribers] = useState<number | null>(null);
   const [totalBlogs, setTotalBlogs] = useState<number | null>(null);
-  const [totalQueries, setTotalQueries] = useState<number | null>(null);
+  const [totalContactLeads, settotalContactLeads] = useState<number | null>(
+    null
+  );
+  const [totalPopupLeads, settotalPopupLeads] = useState<number | null>(null);
   const [gaGraphData, setGaGraphData] = useState<GACityData[]>([]);
   const [trafficSources, setTrafficSources] = useState<GATrafficSource[]>([]);
   const [loading, setLoading] = useState(true);
@@ -56,7 +59,12 @@ export default function AdminDashboard() {
         const queriesRes = await axios.get(
           `${process.env.NEXT_PUBLIC_API_BASE}/query`
         );
-        setTotalQueries(queriesRes.data.data?.length || 0);
+        settotalContactLeads(queriesRes.data.data?.length || 0);
+        // ✅ Fetch Queries
+        const popupleadsRes = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_BASE}/lead`
+        );
+        settotalPopupLeads(popupleadsRes.data.leads?.length || 0);
 
         // ✅ Fetch Google Analytics Data
         const [gaDataRes, gaSummaryRes] = await Promise.all([
@@ -99,7 +107,7 @@ export default function AdminDashboard() {
         console.error("Failed to fetch dashboard data:", err);
         setTotalSubscribers(0);
         setTotalBlogs(0);
-        setTotalQueries(0);
+        settotalContactLeads(0);
       } finally {
         setLoading(false);
       }
@@ -132,8 +140,13 @@ export default function AdminDashboard() {
           icon={<FileText size={28} />}
         />
         <DashboardCard
-          title="Total Queries"
-          value={loading ? null : totalQueries}
+          title="Total Popup Leads"
+          value={loading ? null : totalPopupLeads}
+          icon={<MessageSquare size={28} />}
+        />
+        <DashboardCard
+          title="Total Contact-Form Leads"
+          value={loading ? null : totalContactLeads}
           icon={<BsQuestionOctagonFill size={28} />}
         />
       </div>

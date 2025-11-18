@@ -10,6 +10,7 @@ import {
   ShieldQuestionMark,
   Menu,
   X,
+  MessageSquare,
 } from "lucide-react";
 import Image from "next/image";
 import logo from "../../../assets/logo.png";
@@ -26,8 +27,12 @@ export default function AdminDashboardLayout({
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
     { name: "Subscribers", href: "/adminSubscribers", icon: Users },
     { name: "Blogs", href: "/adminBlogs", icon: FileText },
-    { name: "Query", href: "/query", icon: ShieldQuestionMark },
-    { name: "Contact-Form", href: "/contact-form", icon: ShieldQuestionMark },
+    { name: "Popup Leads", href: "/popup-leads", icon: ShieldQuestionMark },
+    {
+      name: "Contact-Form Leads",
+      href: "/contact-form-leads",
+      icon: MessageSquare,
+    },
   ];
 
   return (
