@@ -64,7 +64,7 @@ export default async function BlogDetails({
         property="og:site_name"
         content="Stellar Binge Restaurant & Lounge Bar"
       />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <Navbar />
 

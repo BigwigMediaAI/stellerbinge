@@ -115,7 +115,7 @@ export default function OurCreationsPage() {
         property="og:site_name"
         content="Stellar Binge Restaurant & Lounge Bar"
       />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>
         Inside Stellar Binge Noida | Luxury Dining & Lounge Bar Gallery

@@ -82,7 +82,7 @@ export default function BanquetPage() {
         property="og:site_name"
         content="Stellar Binge Restaurant & Lounge Bar"
       />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:locale" content="en_IN" />
 
       <title>
         Host Your Dream Event in Noida | Stellar Binge Banquet & Lounge Bar
