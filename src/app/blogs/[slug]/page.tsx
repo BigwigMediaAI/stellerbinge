@@ -6,6 +6,7 @@ import MobileContactBar from "../../../../components/MobileContactBar";
 interface Blog {
   _id: string;
   title: string;
+  author: string;
   slug: string;
   content: string;
   coverImage: string;
@@ -81,7 +82,7 @@ export default async function BlogDetails({
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{blog.title}</h1>
 
         <p className="text-gray-500 text-sm mb-6">
-          {new Date(blog.datePublished).toUTCString()}
+          {blog.author} · {new Date(blog.datePublished).toUTCString()}
         </p>
 
         {blog.coverImage && (
