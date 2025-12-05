@@ -63,7 +63,7 @@ function Blogs() {
     fetchBlogs();
   }, []);
 
-  // ✅ Fuse.js for searching
+  // ✅ Fuse.js for Searching
   useEffect(() => {
     if (!searchQuery) {
       setFilteredBlogs(blogs);
