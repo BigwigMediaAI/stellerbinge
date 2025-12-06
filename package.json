@@ -17,7 +17,7 @@
     "framer-motion": "^12.23.12",
     "fuse.js": "^7.1.0",
     "lucide-react": "^0.539.0",
-    "next": "15.4.6",
+    "next": "^16.0.7",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "react": "19.1.0",

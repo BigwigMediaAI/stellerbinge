@@ -69,14 +69,78 @@ export default async function BlogDetails({
 
       <Navbar />
 
-      {Array.isArray(blog.schemaMarkup) &&
+      {/* ================== AUTO BREADCRUMB SCHEMA ================== */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://www.stellarbinge.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Blogs",
+                item: "https://www.stellarbinge.com/blogs",
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: blog.title,
+                item: `https://www.stellarbinge.com/blogs/${blog.slug}`,
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* ================== AUTO ARTICLE SCHEMA ================== */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://www.stellarbinge.com/blogs/${blog.slug}`,
+            },
+            headline: blog.title,
+            description: blog.excerpt,
+            image: [blog.coverImage],
+            author: {
+              "@type": "Person",
+              name: blog.author || "Team Stellarbinge",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "The Stellarbinge",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.stellarbinge.com/logo.png",
+              },
+            },
+            url: `https://www.stellarbinge.com/blogs/${blog.slug}`,
+            datePublished: blog.datePublished,
+            dateModified: blog.datePublished,
+          }),
+        }}
+      />
+
+      {/* {Array.isArray(blog.schemaMarkup) &&
         blog.schemaMarkup.map((markup, idx) => (
           <script
             key={idx}
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: markup }}
           />
-        ))}
+        ))} */}
 
       <section className="w-11/12 md:w-5/6 mx-auto py-24 mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{blog.title}</h1>
