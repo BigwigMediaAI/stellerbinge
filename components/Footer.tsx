@@ -163,7 +163,9 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left w-11/12 md:w-5/6 mx-auto border-t border-gray-300 py-4 text-xs text-gray-600">
-        <p>BINGE ©2025 All Rights Reserved</p>
+        <p>
+  © 2026 Stellar Binge, a unit of Sure Agencies Pvt. Ltd. All rights reserved.
+</p>
         <p>
           Made & Marketed with ❤{" "}
           <a
